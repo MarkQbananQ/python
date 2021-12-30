@@ -42,6 +42,14 @@ data = [ ["Daniel", "Rafał"],
 ]
 
 print(len(data))
-
 print(data[1][0])
 print(data[2][1])
+
+data1 = [1, 2, 3]
+data2 = [4, 5, 6]
+
+numbers = data1 + data2
+print(numbers)
+
+numbersX2 = numbers * 2
+print(numbersX2)
