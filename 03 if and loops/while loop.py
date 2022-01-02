@@ -24,4 +24,3 @@ while number > 0:
     number -= 1
 else:
     print("number po pętli: " + str(number))
-
