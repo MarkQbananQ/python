@@ -1,11 +1,7 @@
 import random
 import time
-import keyboard
 import os
 import sys
-
-diceNumber = random.randint(1, 6)
-isPlaying = True
 
 print("This is the dice rolling simulator.\n")
 time.sleep(1)
@@ -16,31 +12,24 @@ def clearConsole():
         command = 'cls'
     os.system(command)
 
-def checkKey():
-    while True:
-        print("If you want to play, press 'q' key, else click 'e' to exit: ")
-        keyboard.read_key()
+while True:
+    check = input("If you want to play, enter Q, else enter E to exit: ")
+    if check == 'q':
+        break
+    elif check == 'e':
+        sys.exit()
+    else:
+        continue
+clearConsole()
 
-        if keyboard.read_key() == 'q':
-            print("\nklawisz q")
-            break
-        elif keyboard.read_key() == 'e':
-            print("\nklawisz e")
-            break
-        else:
-            continue
-    clearConsole()
+while True:
+    keyCheck = input("To roll the dice, enter R, if you want to exit, enter E: ")
 
-checkKey()
-
-while isPlaying == True:
-    print("To roll the dice, press R\n")
-    print("If you want to exit, press E\n")
-
-    if keyboard.is_pressed('r'):
+    if keyCheck == 'r':
         clearConsole()
-        print("You rolled number ", diceNumber)
-    elif keyboard.is_pressed('e'):
+        print("You rolled number ", random.randint(1, 6))
+    elif keyCheck == 'e':
         clearConsole()
-        isPlaying = False
         sys.exit(0)
+    else:
+        continue
