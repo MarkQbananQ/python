@@ -4,7 +4,8 @@ import keyboard
 import os
 import sys
 
-diceNumber = random.randrange(1, 7)
+diceNumber = random.randint(1, 6)
+isPlaying = True
 
 print("This is the dice rolling simulator.\n")
 time.sleep(1)
@@ -28,6 +29,18 @@ def checkKey():
             break
         else:
             continue
+    clearConsole()
 
 checkKey()
 
+while isPlaying == True:
+    print("To roll the dice, press R\n")
+    print("If you want to exit, press E\n")
+
+    if keyboard.is_pressed('r'):
+        clearConsole()
+        print("You rolled number ", diceNumber)
+    elif keyboard.is_pressed('e'):
+        clearConsole()
+        isPlaying = False
+        sys.exit(0)
