@@ -3,14 +3,15 @@ import time
 import os
 import sys
 
-print("This is the dice rolling simulator.\n")
-time.sleep(1)
 
 def clearConsole():
     command = 'clear'
     if os.name in ('nt', 'dos'):
         command = 'cls'
     os.system(command)
+
+print("This is the dice rolling simulator.\n")
+time.sleep(1)
 
 while True:
     check = input("If you want to play, enter Q, else enter E to exit: ")
